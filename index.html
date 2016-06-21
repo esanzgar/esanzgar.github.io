@@ -7,12 +7,14 @@
 
         <link rel="stylesheet" href="//rawgit.com/enyo/dropzone/master/dist/dropzone.css">
         <link rel="stylesheet" type="text/css" href="//wwwtyro.github.io/speck/static/index.css">
-        <style type="text/css" media="screen">
-        </style>
+        
         <script>
             Dropzone.autoDiscover = false;
             $(function(){
-                var myDropzone = new Dropzone("#dropzone");
+                $( document ).ajaxError(function() {
+                      alert('Something went wrong with your request. Please, try again.');
+                });
+                var myDropzone = new Dropzone(".dropzone", {url:'#'});
                 myDropzone.on('addedfile', function(file){
                         if (typeof (FileReader) != "undefined") {
                             var reader = new FileReader();
@@ -52,13 +54,9 @@
     </head>
     <body>
 
-        <div id="render-container" style="height: 836px; width: 836px; left: 32px; top: 32px;">
-            <form action="#" id="dropzone"> 
-                <div>
-                    Drag your file here
-                </div>
-                <canvas id="renderer-canvas" height="768" width="768"></canvas>
-            </form>
+        <div id="render-container" class="dropzone" style="height: 836px; width: 836px; left: 32px; top: 32px;">
+            Drag and drop smile files here
+            <canvas id="renderer-canvas" height="768" width="768"></canvas>
         </div>
 
         <div id="controls-menu" style="left: 900px; top: 32px;">
