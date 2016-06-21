@@ -24,9 +24,9 @@
                                 }
                                 else if (rows.length == 1){
                                     console.log(rows[0]);
-                                    $.get('https//www.ebi.ac.uk/chembl/api/utils/smiles2ctab/'+ btoa(rows[0]),
+                                    $.get('https://www.ebi.ac.uk/chembl/api/utils/smiles2ctab/'+ btoa(rows[0]),
                                          function( data ) {
-                                            $.get('https//www.ebi.ac.uk/chembl/api/utils/ctab2xyz/'+ btoa(data),
+                                            $.get('https://www.ebi.ac.uk/chembl/api/utils/ctab2xyz/'+ btoa(data),
                                                 function( data ) {
                                                 $('#xyz-data').val(data);
                                                 $('#xyz-button').click();
