@@ -1,0 +1,3 @@
+[submodule "web_presentations"]
+	path = web_presentations
+	url = git@github.com:esanzgar/web_presentations.git
